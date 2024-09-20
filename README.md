@@ -2,19 +2,16 @@
 Aplikasi ini digunakan untuk menghitung nilai **_Bit Error Rate_ (BER)** pada sebuah link komunikasi serial (**RS232**) untuk menguji kualitas link komunikasi. Pengujian BER Test tidak dapat dilakukan secara langsung pada link komunikasi yg sudah terhubung dengan peralatan lain pada sisi ujungnya, melainkan hanya dapat dilakukan ketika sisi ujung komunikasi serial telah **ter-_loop_** (Pin Tx-Rx dijumper). Dari hasil nilai BER Test, user dapat mengetahui nilai persentase **_Confidence Level_** terhadap standar nilai BER yang telah ditetapkan apabila diimplementasikan langsung pada link komunikasi yang diuji.
 
 `Module : Python3.10+, PySerial, nicegui`
-<br \>
 
 #### Feature
    1. Menguji **Serial COM** maupun **Serial Over TCP/IP**
    1. Menghitung BER
    1. Menghitung Confidence Level
-<br \>
 
 #### Prasyarat Penggunaan Aplikasi
 - USB to Serial
 - Kabel serial RS232 sesuai kebutuhan
 - Kabel LAN (mode Raw Socket)
-<br \>
 
 #### Parameter
    1. Parameter Serial
@@ -46,12 +43,10 @@ Aplikasi ini digunakan untuk menghitung nilai **_Bit Error Rate_ (BER)** pada se
       + **Confidence Level** : Persentase "keyakinan" bahwa nilai BER saat kondisi sesungguhnya (komunikasi serial antar ujung peralatan) akan lebih rendah dari nilai standar BER yang ditetapkan. Perhitungan ini menggunakan rumus [distribusi Poisson](https://www.sitime.com/ber-confidence-level-calculator).
       + **Avg. Propagation Time** : Rata-rata waktu propagasi dari data dikirim hingga diterima kembali. (`t`<sub>`TxRx`</sub> + `t`<sub>`internal`</sub>)
       + **Avg. Link Latency** : Rata-rata waktu delay yang timbul disisi link komunikasi serial.
-<br \>
 
 #### Metode Test
    1. **Simple Loop Test** : Test sederhana dengan mengirim karakter kemudian membandingkan dengan karakter yang diterima untuk mengetahui bahwa ujung link komunikasi serial telah di-_loop_.
    1. **Run Test** : Test dengan mengirim-menerima data serial dalam durasi tertentu sesuai dengan parameter-parameter yang telah dikonfigurasi.
-<br \>
 
 #### Contributor
-Putu Agus [(@antara-adiputra)](https://github.com/antara-adiputra/)
+Agus Antara [(@antara-adiputra)](https://github.com/antara-adiputra/)
