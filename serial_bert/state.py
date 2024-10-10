@@ -5,10 +5,10 @@ ABOUT = """**Serial Bit Error Rate (BER) Test**
 
 	Version		: v0.0.1
 	Company		: Fasop UP2B Sistem Makassar
-	Contributor	: Putu Agus Antara
+	Contributor	: Putu Agus Antara A.
 
-This project is _open source_ and free to use for testing serial link purpose in various application.\n
-Read our documentation [here](/documentation) or check our source code [here](https://github.com/antara-adiputra/serial-bert).
+This project is _open source_ and free to use for testing serial link purpose in various applications.\n
+Read our documentation [here](/documentation) or check our source code [here](https://github.com/antara-adiputra/serial_bert).
 """
 
 class State:

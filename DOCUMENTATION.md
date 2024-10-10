@@ -54,4 +54,4 @@ Aplikasi ini digunakan untuk menghitung nilai **_Bit Error Rate_ (BER)** pada se
 <br \>
 
 #### Contributor
-Putu Agus [(@antara-adiputra)](https://github.com/antara-adiputra/)
+Agus Antara [(@antara-adiputra)](https://github.com/antara-adiputra/)
