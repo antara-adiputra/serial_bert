@@ -7,6 +7,16 @@ from . import core, state, utils
 
 SpinnerType: TypeAlias = Literal['audio', 'bar', 'balls', 'box', 'clock', 'comment', 'cube', 'dots', 'facebook', 'gears', 'grid', 'hearts', 'hourglass', 'infinity', 'ios', 'orbit', 'oval', 'pie', 'puff', 'radio', 'rings', 'tail']
 
+ABOUT = """**Serial Bit Error Rate (BER) Test**
+
+	Version		: v0.0.1
+	Company		: Fasop UP2B Sistem Makassar
+	Contributor	: Putu Agus Antara A.
+
+This project is _open source_ and free to use for testing serial link purpose in various applications.\n
+Read our documentation [here](/documentation) or check our source code [here](https://github.com/antara-adiputra/serial_bert).
+"""
+
 ui_item = ui.item.default_style('padding: 2px 8px;')
 ui_section = ui.item_section.default_classes('align-stretch')
 ui_select = ui.select.default_props('dense outlined square stack-label options-dense')
@@ -475,7 +485,7 @@ class GUI(ui.card):
 							.bind_enabled_from(self, 'state', ready_to_test)\
 							.props('dense square')\
 							.classes('w-full')
-						ui.button('Run Test', on_click=self.character_test)\
+						ui.button('BER Test', on_click=self.character_test)\
 							.bind_enabled_from(self, 'state', ready_to_test)\
 							.props('dense square')
 
@@ -512,7 +522,7 @@ class GUI(ui.card):
 			ui.label('About').classes('text-bold text-center')
 			ui.separator()
 			with UIColumn(css_padding='p-1'):
-				ui.markdown(content=state.ABOUT)
+				ui.markdown(content=ABOUT)
 				ui.separator()
 				with UIRow():
 					ui.space()
