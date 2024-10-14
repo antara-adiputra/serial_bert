@@ -40,8 +40,9 @@ cat > run.sh <<EOF
 #!/usr/bin/env bash
 
 
-source "$DIR/$DIR_ENV/bin/activate"
-python $DIR/main.py
+cd $DIR
+source $DIR_ENV/bin/activate
+python main.py
 echo -e "\r\nApplication has been stopped.\r\n"
 EOF
 chmod +x run.sh
