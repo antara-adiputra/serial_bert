@@ -48,9 +48,9 @@ Aplikasi ini digunakan untuk menghitung nilai **_Bit Error Rate_ (BER)** pada se
       + **Avg. Link Latency** : Rata-rata waktu delay yang timbul disisi link komunikasi serial.
 <br \>
 
-#### Metode Test
+#### Mode Test
    1. **Simple Loop Test** : Test sederhana dengan mengirim karakter kemudian membandingkan dengan karakter yang diterima untuk mengetahui bahwa ujung link komunikasi serial telah di-_loop_.
-   1. **Run Test** : Test dengan mengirim-menerima data serial dalam durasi tertentu sesuai dengan parameter-parameter yang telah dikonfigurasi.
+   1. **BER Test** : Test dengan mengirim-menerima data serial dalam durasi tertentu sesuai dengan parameter-parameter yang telah dikonfigurasi.
 <br \>
 
 #### Contributor
