@@ -10,7 +10,6 @@ app = GUI()
 
 
 if __name__ in {"__main__", "__mp_main__"}:
-	# print(f'Application run on {settings.ALLOWED_HOST}:{settings.BIND_PORT}')
 	ui.run(
 		host=settings.ALLOWED_HOST,
 		port=settings.BIND_PORT,
@@ -24,3 +23,4 @@ if __name__ in {"__main__", "__mp_main__"}:
 		language=settings.LANGUAGE,
 		show_welcome_message=False
 	)
+	print(f'Application run on {settings.ALLOWED_HOST}:{settings.BIND_PORT}')
