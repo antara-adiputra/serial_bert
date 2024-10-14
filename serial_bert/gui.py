@@ -1,4 +1,4 @@
-import asyncio, time
+import asyncio, os, time
 from concurrent.futures import ThreadPoolExecutor
 from typing import Any, Callable, Iterator, Literal, Optional, Self, TypeAlias
 
@@ -254,7 +254,7 @@ class GUI(ui.card):
 			self._render_test_result()
 			self._render_test_control()
 
-		self._render_debugger()
+		if os.environ['DEBUG']=='1': self._render_debugger()
 
 	def _render_serial_param(self) -> None:
 		def raw_socket_verified(obj: state.MainState):

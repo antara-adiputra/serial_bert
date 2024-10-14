@@ -1,4 +1,4 @@
-import settings
+import os
 
 
 class State:
@@ -24,15 +24,15 @@ class SerialConfig(State):
 	def __init__(self) -> None:
 		super().__init__()
 		self.com_port: str = None
-		self.baudrate: int = getattr(settings, 'DEFAULT_BAUDRATE', 9600)
-		self.data_bit: int = getattr(settings, 'DEFAULT_DATA_BIT', 8)
-		self.stop_bit: int = getattr(settings, 'DEFAULT_STOP_BIT', 1)
-		self.parity: str = getattr(settings, 'DEFAULT_PARITY', 'N')
+		self.baudrate: int = int(os.environ.get('DEFAULT_BAUDRATE', 9600))
+		self.data_bit: int = int(os.environ.get('DEFAULT_DATA_BIT', 8))
+		self.stop_bit: int = int(os.environ.get('DEFAULT_STOP_BIT', 1))
+		self.parity: str = os.environ.get('DEFAULT_PARITY', 'N')
 		self.flow_control: str = 'NONE'
-		self.timeout: float = getattr(settings, 'READ_TIMEOUT', 1)
+		self.timeout: float = float(os.environ.get('READ_TIMEOUT', 1))
 		self.remote_ip: str = None
 		self.remote_port: int = None
-		self.tcp_timeout: float = getattr(settings, 'TCP_PACKET_TIMEOUT', 3)
+		self.tcp_timeout: float = float(os.environ.get('TCP_PACKET_TIMEOUT', 3))
 
 	def reset(self) -> None:
 		self.__init__()
@@ -54,8 +54,8 @@ class MainState(State):
 	serial_param_visible: bool = True
 	test_param_visible: bool = True
 	test_result_visible: bool = True
-	frame_min_limit: int = getattr(settings, 'FRAME_MIN_LIMIT', 1)
-	frame_max_limit: int = getattr(settings, 'FRAME_MAX_LIMIT', 1024)
+	frame_min_limit: int = int(os.environ.get('FRAME_MIN_LIMIT', 1))
+	frame_max_limit: int = int(os.environ.get('FRAME_MAX_LIMIT', 1024))
 
 	def __init__(self) -> None:
 		super().__init__()

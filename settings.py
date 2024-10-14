@@ -1,7 +1,7 @@
 """Modify parameter in this file to customize application behavior."""
 
 # Turn On/Off debug mode
-DEBUG = True
+DEBUG = False
 
 # GUI SETTINGS
 # Parameters below refer to ui.run of NiceGUI, for more information https://nicegui.io/documentation/section_configuration_deployment#ui_run
