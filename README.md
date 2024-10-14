@@ -1,19 +1,46 @@
-## **Serial BER Test**
+# **Serial BER Test**
 Aplikasi ini digunakan untuk menghitung nilai **_Bit Error Rate_ (BER)** pada sebuah link komunikasi serial (**RS232**) untuk menguji kualitas link komunikasi. Pengujian BER Test tidak dapat dilakukan secara langsung pada link komunikasi yg sudah terhubung dengan peralatan lain pada sisi ujungnya, melainkan hanya dapat dilakukan ketika sisi ujung komunikasi serial telah **ter-_loop_** (Pin Tx-Rx dijumper). Dari hasil nilai BER Test, user dapat mengetahui nilai persentase **_Confidence Level_** terhadap standar nilai BER yang telah ditetapkan apabila diimplementasikan langsung pada link komunikasi yang diuji.
 
-`Module : Python3.10+, PySerial, nicegui`
+Module: `Python3.10+, PySerial, Nicegui`
 
-#### Feature
+</br>
+
+## Instalasi
+### Linux
+   1. Buka terminal/console.
+   1. Clone project langsung dari github. Pastikan komputer terhubung dengan internet.
+      ```bash
+      git clone https://github.com/antara-adiputra/serial_bert.git
+      ```
+   1. Jalankan file `setup.sh` untuk instalasi aplikasi.
+      ```bash
+      ./setup.sh
+      ```
+   1. Setelah instalasi selesai, aplikasi dapat diaktifkan dengan menjalankan file `run.sh`.
+      ```bash
+      ./run.sh
+      ```
+
+### Windows
+   1. Download project pada menu Code -> Download ZIP.
+   1. Extract file pada folder yang diinginkan.
+   1. Jalankan file (_double click_) `setup.bat` dan tunggu hingga proses instalasi selesai.
+   1. Setelah instalasi selesai, aplikasi dapat diaktifkan dengan menjalankan file (_double click_) `run.bat`.
+</br>
+
+## Feature
    1. Menguji **Serial COM** maupun **Serial Over TCP/IP**
    1. Menghitung BER
    1. Menghitung Confidence Level
+</br>
 
-#### Prasyarat Penggunaan Aplikasi
+## Prasyarat Penggunaan Aplikasi
 - USB to Serial
 - Kabel serial RS232 sesuai kebutuhan
 - Kabel LAN (mode Raw Socket)
+</br>
 
-#### Parameter
+## Parameter
    1. Parameter Serial
       + **Serial COM** : Mode port serial murni.
          - **Serial Port** : Port serial yang digunakan pada PC/Laptop (ex. COM1 pada Windows, /dev/ttyUSB0 pada Linux). Pastikan driver USB to Serial sudah terinstall pada PC/Laptop.
@@ -43,10 +70,12 @@ Aplikasi ini digunakan untuk menghitung nilai **_Bit Error Rate_ (BER)** pada se
       + **Confidence Level** : Persentase "keyakinan" bahwa nilai BER saat kondisi sesungguhnya (komunikasi serial antar ujung peralatan) akan lebih rendah dari nilai standar BER yang ditetapkan. Perhitungan ini menggunakan rumus [distribusi Poisson](https://www.sitime.com/ber-confidence-level-calculator).
       + **Avg. Propagation Time** : Rata-rata waktu propagasi dari data dikirim hingga diterima kembali. (`t`<sub>`TxRx`</sub> + `t`<sub>`internal`</sub>)
       + **Avg. Link Latency** : Rata-rata waktu delay yang timbul disisi link komunikasi serial.
+</br>
 
-#### Mode Test
+## Mode Test
    1. **Simple Loop Test** : Test sederhana dengan mengirim karakter kemudian membandingkan dengan karakter yang diterima untuk mengetahui bahwa ujung link komunikasi serial telah di-_loop_.
    1. **BER Test** : Test dengan mengirim-menerima data serial dalam durasi tertentu sesuai dengan parameter-parameter yang telah dikonfigurasi.
+</br>
 
-#### Contributor
+## Contributor
 Agus Antara [(@antara-adiputra)](https://github.com/antara-adiputra/)
